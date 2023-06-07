@@ -5,6 +5,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import MovieCard from './MovieCard';
 import { IoChevronBackOutline, IoChevronForwardOutline } from 'react-icons/io5';
 import HrMovieCard from './HrMovieCard';
+import { arrowStyles } from '@/constants';
 
 type Props = {
   genre: Genre;
@@ -14,8 +15,6 @@ type Props = {
 const MovieList = ({ genre, index_ }: Props) => {
   const [movieList, setMovieList] = useState<Movie[]>([]);
   const $slider = useRef<HTMLDivElement>(null);
-
-  const arrowStyle = `arrow absolute top-1/2 z-20 hidden md:flex h-full w-8 -translate-y-1/2 items-center justify-center border-[1px] border-[#ddd3] bg-[#ddd7] text-[30px] opacity-0 transition-all hover:bg-[#ddd9]`;
 
   const getMovieByGenreId = async () => {
     try {
@@ -48,7 +47,7 @@ const MovieList = ({ genre, index_ }: Props) => {
       <h2 className="pl-10 text-sm md:pl-20">{genre.name}</h2>
       <div key={genre.id} className="relative">
         <div
-          className={arrowStyle}
+          className={`${arrowStyles} h-full`}
           onClick={() => sliderLeft($slider.current!)}
         >
           <IoChevronBackOutline />
@@ -68,7 +67,7 @@ const MovieList = ({ genre, index_ }: Props) => {
           ))}
         </div>
         <div
-          className={`${arrowStyle} right-0`}
+          className={`${arrowStyles} right-0 h-full`}
           onClick={() => sliderRight($slider.current!)}
         >
           <IoChevronForwardOutline />

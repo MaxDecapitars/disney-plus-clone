@@ -1,12 +1,9 @@
-import { beforeStyles } from '@/constants';
+import { arrowStyles, beforeStyles } from '@/constants';
 import globalAPI from '@/services/globalAPI';
 import { Movie } from '@/types/services';
 import axios from 'axios';
 import { useEffect, useRef, useState } from 'react';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi2';
-
-const arrowStyle =
-  'arrow absolute top-1/2 hidden md:flex h-[calc(100%_+_1rem)] w-12 -translate-y-1/2 z-20 items-center justify-center border-[1px] border-[#ddd3] bg-[#ddd7] text-[30px] opacity-0 transition-all hover:bg-[#ddd9]';
 
 const Slider = () => {
   const [movieList, setMovieList] = useState<Movie[]>([]);
@@ -75,7 +72,7 @@ const Slider = () => {
   return (
     <section className="relative [&>.arrow]:hover:opacity-100">
       <div
-        className={arrowStyle}
+        className={`${arrowStyles} h-[calc(100%_-_1rem)]`}
         onClick={() => {
           sliderLeft($slider.current!);
           setAutoScroll(false);
@@ -84,7 +81,7 @@ const Slider = () => {
         <HiChevronLeft />
       </div>
       <div
-        className={`${arrowStyle} right-0`}
+        className={`${arrowStyles} right-0 h-[calc(100%_-_1rem)]`}
         onClick={() => {
           sliderRight($slider.current!);
           setAutoScroll(false);
