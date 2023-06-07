@@ -106,7 +106,7 @@ const Slider = () => {
                 item.backdrop_path || item.poster_path
               }`}
               alt={item.title}
-              className="object-cover"
+              className="h-full w-full object-cover"
             />
           </div>
         ))}
