@@ -106,6 +106,7 @@ const Slider = () => {
                 item.backdrop_path || item.poster_path
               }`}
               alt={item.title}
+              className="object-cover"
             />
           </div>
         ))}
