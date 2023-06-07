@@ -102,7 +102,9 @@ const Slider = () => {
             className={`relative h-60 min-w-full overflow-hidden rounded-md object-cover object-left-top transition-transform hover:scale-[1.02] md:h-[310px] ${beforeStyles}`}
           >
             <img
-              src={`${globalAPI.IMAGE_BASE_URL}${item.backdrop_path}`}
+              src={`${globalAPI.IMAGE_ORIGINAL_URL}/${
+                item.backdrop_path || item.poster_path
+              }`}
               alt={item.title}
             />
           </div>
