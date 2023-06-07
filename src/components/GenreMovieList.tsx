@@ -11,14 +11,12 @@ const GenreMovieList = () => {
     try {
       const res = await globalAPI.getGenresMovies;
 
-      console.log(res.data);
-
       setGenreList(res.data.genres);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.log('error message: ', error.message);
+        console.log('Axios message: ', error.message);
       } else {
-        console.log('unexpected error: ', error);
+        console.log('Unexpected error: ', error);
       }
     }
   };

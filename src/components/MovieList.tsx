@@ -19,13 +19,12 @@ const MovieList = ({ genre, index_ }: Props) => {
   const getMovieByGenreId = async () => {
     try {
       const res = await globalAPI.getMoviesByGenre(genre.id);
-      // console.log(res.data.results);
       setMovieList(res.data.results);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.log('error message: ', error.message);
+        console.log('Axios message: ', error.message);
       } else {
-        console.log('unexpected error: ', error);
+        console.log('Unexpected error: ', error);
       }
     }
   };

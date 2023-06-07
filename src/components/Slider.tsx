@@ -18,14 +18,13 @@ const Slider = () => {
     try {
       const res = await globalAPI.getTrendingMovies;
 
-      console.log(res.data);
 
       setMovieList(res.data.results);
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.log('error message: ', error.message);
+        console.log('Axios Error: ', error.message);
       } else {
-        console.log('unexpected error: ', error);
+        console.log('Unexpected error: ', error);
       }
     }
   };
