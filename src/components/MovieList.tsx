@@ -31,11 +31,11 @@ const MovieList = ({ genre, index_ }: Props) => {
   };
 
   const sliderRight = ($slider: HTMLDivElement) => {
-    $slider.scrollLeft += 500;
+    $slider.scrollLeft += window.innerWidth - 80;
   };
 
   const sliderLeft = ($slider: HTMLDivElement) => {
-    $slider.scrollLeft -= 500;
+    $slider.scrollLeft -= window.innerWidth - 80;
   };
 
   useEffect(() => {
