@@ -44,9 +44,9 @@ const MovieList = ({ genre, index_ }: Props) => {
   }, []);
 
   return (
-    <div className="[&_.arrow]:hover:opacity-100">
+    <article className="[&_.arrow]:hover:opacity-100">
       <h2 className="pl-10 text-sm md:pl-20">{genre.name}</h2>
-      <article key={genre.id} className="relative">
+      <div key={genre.id} className="relative">
         <div
           className={arrowStyle}
           onClick={() => sliderLeft($slider.current!)}
@@ -73,8 +73,8 @@ const MovieList = ({ genre, index_ }: Props) => {
         >
           <IoChevronForwardOutline />
         </div>
-      </article>
-    </div>
+      </div>
+    </article>
   );
 };
 
